@@ -3,8 +3,50 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 
+#para poder guardar los datos correspondientes de la lista es necesario utilizar un archivo, para ello vamos a ocupar la libreria os
+import os
+
+#vamos a declarar un archivo, tenemos dos opciones una ruta dinamica o una ruta estatica, eso queda de tarea
+ARCHIVO="alumnos.txt"
+
 #primero vamos a crear una lista de alumnos
 alumnos=[]
+
+#vamos a crear una funcion para cargar datos
+def cargar_datos():
+    #verificar si existe el archivo
+    if os.path.exists(ARCHIVO):
+        with open(ARCHIVO, "r") as f:
+            for linea in f:
+            #que voy a tener por cada linea
+            #es un metodo de cadena que nos ayuda a eliminar espacios al inicio y al final de una cadena "habia" 
+            partes = linea.strip().split(",")
+            if len(partes)>=6:
+                boleta=partes[0]
+                nombre=partes[1]
+                apellido_paterno=partes[2]
+                apellido_materno=partes[3]
+                fecha_nacimiento=partes[4]
+                calificaciones=list(map(float, partes[5:]))
+            #defino al almuno
+            alumno={
+                "boleta":boleta,
+                "nombre":nombre,
+                "apellido_parterno":appat,
+                "apellido_materno":apmat,
+                "fecha_nacimiento":fecnac,
+                "calificaciones":calificaciones
+            }
+            alumnos.append(alumno)
+
+#vamos a crear la funcion para guardar los datos
+def guardar_datos():
+    with open(ARCHIVO, "w") as f:
+        for alumno in alumnos:
+            f.write(f"{alumno['boleta']},{alumno['nombre']}{alumno['apellido_paterno]}{alumno['apelllido_materno]}{alumno['fecha_nacimiento']}")
+
+
+
 
 #el examen debe de tener al menos 8 elementos de la lista que desean guardar
 #el examen debe de poseer elementos de dialogo y mensajes de salida con tkinter
