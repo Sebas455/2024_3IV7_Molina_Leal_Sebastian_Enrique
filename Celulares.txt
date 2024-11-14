@@ -1,0 +1,32 @@
+iPhone 15 Pro,Apple,128 GB,3279 mAh,Triple 48 MP + 12 MP + 12 MP,6.1" Super Retina XDR OLED,A17 Bionic,USB-C
+Galaxy S23 Ultra,Samsung,256 GB,5000 mAh,Cuádruple 200 MP + 10 MP + 12 MP + 10 MP,6.8" Dynamic AMOLED 2X,Snapdragon 8 Gen 2,USB-C
+Pixel 8 Pro,Google,128 GB,5050 mAh,Triple 50 MP + 48 MP + 12 MP,6.7" OLED,Google Tensor G3,USB-C
+13 Pro,Xiaomi,128 GB,4820 mAh,Triple 50 MP + 50 MP + 50 MP,6.73" AMOLED,Snapdragon 8 Gen 2,USB-C
+11,OnePlus,128 GB,5000 mAh,Triple 50 MP + 32 MP + 48 MP,6.7" Fluid AMOLED,Snapdragon 8 Gen 2,USB-C
+Edge 40 Pro,Motorola,256 GB,4600 mAh,Triple 50 MP + 50 MP + 12 MP,6.67" pOLED,Snapdragon 8 Gen 2,USB-C
+Xperia 1 V,Sony,256 GB,5000 mAh,Triple 12 MP + 12 MP + 12 MP,6.5" OLED 4K,Snapdragon 8 Gen 2,USB-C
+P60 Pro,Huawei,256 GB,4815 mAh,Triple 48 MP + 48 MP + 13 MP,6.67" OLED,Snapdragon 8+ Gen 1,USB-C
+Find X6 Pro,Oppo,256 GB,5000 mAh,Triple 50 MP + 50 MP + 50 MP,6.82" AMOLED,Snapdragon 8 Gen 2,USB-C
+GT3,Realme,128 GB,4600 mAh,Triple 50 MP + 8 MP + 2 MP,6.74" AMOLED,Snapdragon 8+ Gen 1,USB-C
+X30 5G,Nokia,128 GB,4200 mAh,Dual 50 MP + 13 MP,6.43" AMOLED,Snapdragon 695 5G,USB-C
+ROG Phone 7,Asus,256 GB,6000 mAh,Triple 50 MP + 13 MP + 5 MP,6.78" AMOLED,Snapdragon 8 Gen 2,USB-C
+X90 Pro,Vivo,256 GB,4870 mAh,Triple 50 MP + 50 MP + 12 MP,6.78" AMOLED,Dimensity 9200,USB-C
+Magic5 Pro,Honor,256 GB,5100 mAh,Triple 50 MP + 50 MP + 64 MP,6.81" OLED,Snapdragon 8 Gen 2,USB-C
+F5 Pro,Poco,256 GB,5160 mAh,Triple 64 MP + 8 MP + 2 MP,6.67" AMOLED,Snapdragon 8+ Gen 1,USB-C
+Legion Phone 2,Lenovo,128 GB,5500 mAh,Doble 64 MP + 16 MP,6.92" AMOLED,Snapdragon 888,USB-C
+Redmi Note 12 Pro+,Xiaomi,256 GB,5000 mAh,Triple 200 MP + 8 MP + 2 MP,6.67" AMOLED,Dimensity 1080,USB-C
+Galaxy Z Fold5,Samsung,256 GB,4400 mAh,Triple 50 MP + 12 MP + 10 MP,7.6" Dynamic AMOLED,Snapdragon 8 Gen 2,USB-C
+iPhone SE (3ra Gen),Apple,64 GB,2018 mAh,12 MP,4.7" Retina HD,A15 Bionic,Lightning
+Phantom V Fold,Tecno,256 GB,5000 mAh,Triple 50 MP + 50 MP + 13 MP,7.85" AMOLED,Dimensity 9000+,USB-C
+Galaxy A54 5G,Samsung,128 GB,5000 mAh,Triple 50 MP + 12 MP + 5 MP,6.4" Super AMOLED,Exynos 1380,USB-C
+10 Pro,Realme,128 GB,5000 mAh,Dual 108 MP + 2 MP,6.72" IPS LCD,Snapdragon 695,USB-C
+Reno 10 Pro+,Oppo,256 GB,4700 mAh,Triple 50 MP + 8 MP + 32 MP,6.74" AMOLED,Snapdragon 8+ Gen 1,USB-C
+G42,Nokia,128 GB,5000 mAh,Triple 50 MP + 2 MP + 2 MP,6.56" IPS LCD,Snapdragon 480+,USB-C
+Mate X3,Huawei,512 GB,4800 mAh,Triple 50 MP + 13 MP + 8 MP,7.85" Foldable OLED,Snapdragon 8+ Gen 1,USB-C
+Xperia 5 V,Sony,128 GB,5000 mAh,Triple 48 MP + 12 MP + 12 MP,6.1" OLED,Snapdragon 8 Gen 2,USB-C
+12T Pro,Xiaomi,128 GB,5000 mAh,Triple 200 MP + 8 MP + 2 MP,6.67" AMOLED,Snapdragon 8+ Gen 1,USB-C
+Y100,Vivo,128 GB,4500 mAh,Triple 64 MP + 2 MP + 2 MP,6.38" AMOLED,Dimensity 900,USB-C
+Zero Ultra,Infinix,256 GB,4500 mAh,Triple 200 MP + 13 MP + 2 MP,6.8" AMOLED,Dimensity 920,USB-C
+Galaxy Z Flip5,Samsung,256 GB,3700 mAh,Dual 12 MP + 12 MP,6.7" Dynamic AMOLED 2X,Snapdragon 8 Gen 2,USB-C
+a,a,a,a,a,a,a,a
+c,c,c,c,c,c,c,c

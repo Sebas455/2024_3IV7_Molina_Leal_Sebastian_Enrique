@@ -1,0 +1,141 @@
+import tkinter as tk
+from tkinter import messagebox, simpledialog, ttk
+import os
+
+ARCHIVO = 'Celulares.txt'
+celulares = []
+
+def cargar_datos():
+    if os.path.exists(ARCHIVO):
+        with open(ARCHIVO, "r") as f:
+            for linea in f:
+                partes = linea.strip().split(",")
+                if len(partes) >= 8:
+                    modelo = partes[0].strip()
+                    marca = partes[1].strip()
+                    espacio = partes[2].strip()
+                    bateria = partes[3].strip()
+                    camara = partes[4].strip()
+                    pantalla = partes[5].strip()
+                    procesador = partes[6].strip()
+                    puerto_carga = partes[7].strip()
+                    celular = {
+                        "modelo": modelo,
+                        "marca": marca,
+                        "espacio": espacio,
+                        "bateria": bateria,
+                        "camara": camara,
+                        "pantalla": pantalla,
+                        "procesador": procesador,
+                        "puerto_carga": puerto_carga
+                    }
+                    celulares.append(celular)
+
+def guardar_datos():
+    with open(ARCHIVO, "w") as f:
+        for celular in celulares:
+            f.write(f"{celular['modelo']},{celular['marca']},{celular['espacio']},{celular['bateria']},{celular['camara']},{celular['pantalla']},{celular['procesador']},{celular['puerto_carga']}\n")
+
+def registrar_celular():
+    modelo = simpledialog.askstring("Entrada", "Ingresa el modelo del celular:")
+    if not modelo:
+        return
+    marca = simpledialog.askstring("Entrada", "Ingresa la marca del celular:")
+    espacio = simpledialog.askstring("Entrada", "Ingresa el espacio del celular:")
+    bateria = simpledialog.askstring("Entrada", "Ingresa la capacidad de la batería del celular:")
+    camara = simpledialog.askstring("Entrada", "Ingresa las camaras:")
+    pantalla = simpledialog.askstring("Entrada", "Ingresa el modelo de pantalla del celular:")
+    procesador = simpledialog.askstring("Entrada", "Ingresa el procesador del celular:")
+    puerto_carga = simpledialog.askstring("Entrada", "Ingresa el puerto de carga del celular:")
+
+    celular = {
+        "modelo": modelo,
+        "marca": marca,
+        "espacio": espacio,
+        "bateria": bateria,
+        "camara": camara,
+        "pantalla": pantalla,
+        "procesador": procesador,
+        "puerto_carga": puerto_carga
+    }
+    celulares.append(celular)
+    guardar_datos()
+    messagebox.showinfo("Éxito", "Celular guardado exitosamente")
+
+def consultar_celulares():
+    if not celulares:
+        messagebox.showinfo("Información", "No hay registros.")
+        return
+
+    ventana_tabla = tk.Toplevel()
+    ventana_tabla.title("Lista de celulares")
+
+    estilo = ttk.Style()
+    estilo.configure("Small.Treeview", font=("Arial", 8), rowheight=20, background="papayawhip",foreground="black",fieldbackground="white")
+
+    estilo.configure("Small.Treeview.Heading", background='moccasin',foreground="black",font=("Arial", 10, "bold"))
+
+    tabla = ttk.Treeview(ventana_tabla, columns=("Modelo", "Marca", "Espacio", "Bateria", "Camara", "Pantalla", "Procesador", "Puerto de carga"), show='headings', style="Small.Treeview")
+    encabezados = ["Modelo", "Marca", "Espacio", "Bateria", "Camara", "Pantalla", "Procesador", "Puerto de carga"]
+
+    for encabezado in encabezados:
+        tabla.heading(encabezado, text=encabezado)
+        tabla.column(encabezado, width=100, anchor='center')
+
+    for celular in celulares:
+        tabla.insert("", "end", values=(celular['modelo'], celular['marca'], celular['espacio'], celular['bateria'], celular['camara'], celular['pantalla'], celular['procesador'], celular['puerto_carga']))
+
+    tabla.pack(padx=10, pady=10)
+
+def editar_celular():
+    modelo = simpledialog.askstring("Editar", "Ingrese el modelo del celular a editar:")
+    for celular in celulares:
+        if celular['modelo'] == modelo:
+            celular['marca'] = simpledialog.askstring("Editar", "Ingresa la nueva marca o deja vacío para mantener el actual:") or celular['marca']
+            celular['espacio'] = simpledialog.askstring("Editar", "Ingresa el nuevo espacio o deja vacío para mantener el actual:") or celular['espacio']
+            celular['bateria'] = simpledialog.askstring("Editar", "Ingresa la nueva batería o deja vacío para mantener el actual:") or celular['bateria']
+            celular['camara'] = simpledialog.askstring("Editar", "Ingresa la nueva cámara o deja vacío para mantener el actual:") or celular['camara']
+            celular['pantalla'] = simpledialog.askstring("Editar", "Ingresa la nueva pantalla o deja vacío para mantener el actual:") or celular['pantalla']
+            celular['procesador'] = simpledialog.askstring("Editar", "Ingresa el nuevo procesador o deja vacío para mantener el actual:") or celular['procesador']
+            celular['puerto_carga'] = simpledialog.askstring("Editar", "Ingresa el nuevo puerto de carga o deja vacío para mantener el actual:") or celular['puerto_carga']
+            guardar_datos()
+            messagebox.showinfo("Éxito", "Celular editado exitosamente")
+            return
+    messagebox.showinfo("Error", "No se encontró un celular con el modelo especificado.")
+
+def eliminar_celular():
+    modelo = simpledialog.askstring("Eliminar", "Ingrese el modelo del celular a eliminar:")
+    global celulares
+    celulares = [celular for celular in celulares if celular['modelo'] != modelo]
+    guardar_datos()
+    messagebox.showinfo("Éxito", "Celular eliminado exitosamente")
+
+def buscar_celular():
+    modelo_buscar = simpledialog.askstring("Buscar", "Ingrese el modelo del celular a buscar:")
+    if not modelo_buscar:
+        return
+    resultados = [celular for celular in celulares if celular['modelo'].lower() == modelo_buscar.lower()]
+    if resultados:
+        detalles = "\n\n".join(
+            [f"Modelo: {celular['modelo']}\nMarca: {celular['marca']}\nEspacio: {celular['espacio']}\nBatería: {celular['bateria']}\nCámara: {celular['camara']}\nPantalla: {celular['pantalla']}\nProcesador: {celular['procesador']}\nPuerto de carga: {celular['puerto_carga']}"
+             for celular in resultados]
+        )
+        messagebox.showinfo("Resultados de la búsqueda", detalles)
+    else:
+        messagebox.showinfo("Resultados de la búsqueda", "No se encontró ningún celular con el modelo especificado.")
+
+def main():
+    cargar_datos()
+    root = tk.Tk()
+    root.title("Gestión de Celulares")
+    root.geometry("800x400")
+    root.configure(bg='papayawhip')
+    tk.Button(root, text="Registrar Celular", bg="moccasin", width=25, font=('Times New Roman', 20), command=registrar_celular).pack(padx=10,pady=5)
+    tk.Button(root, text="Consultar Lista de Celulares",bg="moccasin",width=25, font=('Times New Roman', 20), command=consultar_celulares).pack(padx=10,pady=5)
+    tk.Button(root, text="Editar Celular",bg="moccasin",width=25, font=('Times New Roman', 20) ,command=editar_celular).pack(padx=10,pady=5)
+    tk.Button(root, text="Eliminar Celular",bg="moccasin",width=25, font=('Times New Roman', 20), command=eliminar_celular).pack(padx=10,pady=5)
+    tk.Button(root, text="Buscar Celular",bg="moccasin",width=25, font=('Times New Roman', 20), command=buscar_celular).pack(padx=10,pady=5)
+    tk.Button(root, text="Salir",bg="moccasin",width=25, font=('Times New Roman', 20), command=root.quit).pack(padx=10,pady=5)
+    root.mainloop()
+
+main()
